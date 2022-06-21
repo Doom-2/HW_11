@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кандидаты, содержащие в имени '{{ part_name }}'</title>
+</head>
+<body>
+
+{% if candidates|length != 0 %}
+    <h2>Найдено кандидатов {{ candidates|length }}</h2>
+    {% for candidate in candidates %}
+        <p><a href="/candidate/{{ candidate.id }}">{{ candidate.name }}</a></p>
+    {% endfor %}
+{% else %}
+    <br><h3> Нет кандидатов, содержащих в имени '{{ part_name }}'</h3>
+{% endif %}
+
+</body>
+</html>
